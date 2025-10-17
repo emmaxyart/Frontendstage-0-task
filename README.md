@@ -85,5 +85,3 @@ Open a Pull Request
 Give a ⭐️ if this project helped you!
 
 Built with ❤️ by Edobor Emmanuel
-
-Claude Sonnet 3.5 • 1x
