@@ -1,0 +1,557 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --text-color: #ffffff;  /* Changed from #333 to white */
+    --background-color: #ecf0f1;
+    --card-background: #ffffff;
+    --link-color: #3498db;
+    --glass-background: rgba(255, 255, 255, 0.05);  /* More transparent */
+    --glass-border: rgba(245, 245, 245, 0.3);  /* Changed to off-white with some transparency */
+    --glass-shadow: rgba(0, 0, 0, 0.2);             /* Darker shadow */
+    --button-color: #0c3769;
+    --blur-amount: 10px;                            /* Reduced blur for cleaner effect */
+
+    /* Breakpoints */
+    --mobile: 480px;
+    --tablet: 768px;
+    --desktop: 1024px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #04090f;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.profile-card {
+    position: relative;  /* Added position relative for absolute children */
+    background: var(--glass-background);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border: 1px solid var(--glass-border);
+    box-shadow: 
+        0 4px 16px 0 var(--glass-shadow),
+        inset 0 0 80px rgba(255, 255, 255, 0.05);  /* Inner glow */
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Base styles (mobile-first) */
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+/* Add gradient overlay for enhanced glass effect */
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 8px 32px 0 var(--glass-shadow),
+        inset 0 0 80px rgba(255, 255, 255, 0.07);  /* Stronger inner glow on hover */
+}
+
+.avatar-container {
+    position: relative;
+    margin: 0;
+    /* Remove these lines that were creating the bigger circle */
+    /* background: var(--glass-background); */
+    /* padding: 0.5rem; */
+    /* border-radius: 50%; */
+    /* border: 1px solid var(--glass-border); */
+}
+
+.avatar-container img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border: 2px solid var(--glass-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Add hover effect for the image */
+.avatar-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.profile-content {
+    flex: 1;
+}
+
+header {
+    margin-bottom: 1rem;
+}
+
+h2 { /* Changed from var(--primary-color) */
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 0.8s ease forwards, glow 3s infinite;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+
+    /* Base styles (mobile-first) */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(187, 196, 208, 0.3);  /* More transparent */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(207, 219, 233, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    /* Base styles (mobile-first) */
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* Base styles for icons (mobile-first) */
+.social-links a i {
+    margin-right: 6px;
+    font-size: 0.9em;
+    transition: transform 0.2s ease;
+}
+
+/* Update social links for mobile */
+@media screen and (max-width: 480px) {
+    .social-links a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .social-links a i {
+        margin-right: 4px;
+        font-size: 0.85em;
+    }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 481px) {
+    .social-links a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .social-links a i {
+        margin-right: 6px;
+        font-size: 1em;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+    .social-links a {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+
+    .social-links a i {
+        margin-right: 8px;
+        font-size: 1.1em;
+    }
+}
+
+/* Landscape mode optimization */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .social-links a {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .social-links a i {
+        margin-right: 5px;
+        font-size: 0.9em;
+    }
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    background: rgba(12, 55, 105, 0.5);
+    border-color: rgba(237, 241, 245, 0.689);  
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add glow effect on hover */
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover::before {
+    opacity: 1;
+}
+
+:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Base styles (mobile-first) */
+.lists-container {
+    display: grid;
+    /* Change to 2 columns even on mobile */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem; /* Smaller font size for mobile */
+}
+
+/* Make list items fit better on mobile */
+.list-section h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.list-section ul {
+    padding-left: 1rem;
+}
+
+.list-section li {
+    margin-bottom: 0.3rem;
+    color: rgba(255, 255, 255, 0.9);  /* Slightly transparent white for better hierarchy */
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Stagger list item animations */
+.list-section li:nth-child(1) { animation-delay: 0.7s; }
+.list-section li:nth-child(2) { animation-delay: 0.8s; }
+.list-section li:nth-child(3) { animation-delay: 0.9s; }
+
+/* Tablet and up - increase spacing and font size */
+@media screen and (min-width: 481px) {
+    .container {
+        padding: 2rem;
+    }
+
+    .profile-card {
+        padding: 2rem;
+    }
+
+    .avatar-container img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .lists-container {
+        gap: 2rem;
+        font-size: 1rem;
+    }
+
+    .list-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+    .profile-card {
+        flex-direction: row;
+        text-align: left;
+        padding: 2.5rem;
+        gap: 2.5rem;
+        max-width: 700px; 
+    }
+
+    .avatar-container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+    .profile-content {
+        max-width: 600px;
+    }
+
+    .lists-container {
+        gap: 2.5rem;
+    }
+
+    .list-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .time-display {
+        display: inline-block;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Large desktop styles */
+@media screen and (min-width: 1025px) {
+    .container {
+        padding: 3rem;
+    }
+
+    .profile-card {
+        padding: 3rem;
+        max-width: 800px;
+    }
+
+    .avatar-container img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Add safe area insets for modern mobile devices */
+@supports (padding: max(0px)) {
+    .container {
+        padding: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+    }
+}
+
+/* Improve touch targets on mobile */
+@media (hover: none) {
+    .social-links a {
+        padding: 0.6rem 1rem;
+        margin: 0.2rem;
+    }
+
+    #avatar-upload {
+        min-height: 44px;
+    }
+}
+
+/* Optimize for landscape mode on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 1rem;
+        min-height: auto;
+    }
+
+    .profile-card {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .avatar-container img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .profile-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    #avatar-upload {
+        display: none;
+    }
+}
+
+.avatar-controls {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+#avatar-upload {
+    background: var(--glass-background);
+    border: 1px solid var(--glass-border);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.image-url {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    word-break: break-all;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: none;
+}
+
+/* Add keyframe animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Apply animations to elements */
+h2 {
+    animation: fadeInUp 0.8s ease forwards, glow 3s infinite;
+}
+
+.profile-card p {
+    animation: fadeInRight 0.8s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0; /* Start invisible */
+}
+
+.social-links li {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.social-links li:nth-child(1) { animation-delay: 0.3s; }
+.social-links li:nth-child(2) { animation-delay: 0.4s; }
+.social-links li:nth-child(3) { animation-delay: 0.5s; }
+
+.list-section h3 {
+    animation: fadeInRight 0.6s ease forwards;
+    opacity: 0;
+    animation-delay: 0.6s;
+}
+
+.list-section li {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Add hover animations */
+.list-section li:hover {
+    animation: glow 2s infinite;
+}
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+.role-text {
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.role-text::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: var(--glass-border);
+    margin: 0.5rem auto;
+    opacity: 0.7;
+}
+
+.time-display {
+    font-family: monospace; /* For better number alignment */
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    animation: fadeInRight 0.8s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+}
+
+.time-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-right: 8px;
+}

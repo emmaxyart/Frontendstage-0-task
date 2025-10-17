@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edobor Emmanuel Profile Card</title>
+
+    <link rel="icon" type="image/jpeg" href="my profile pic.jpeg">
+    <link rel="apple-touch-icon" href="my profile pic.jpeg">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <article class="profile-card" data-testid="test-profile-card">
+            <figure class="avatar-container">
+                <img src="my profile pic.jpeg" 
+                     alt="User avatar" 
+                     data-testid="test-user-avatar" 
+                     id="avatar">
+                <div class="avatar-controls">
+                    <input type="file" 
+                           id="avatar-upload" 
+                           aria-label="Upload profile picture">
+                    <div class="image-url" id="image-url"></div>
+                </div>
+                <figcaption class="role-text">Software Developer</figcaption>
+            </figure>
+            
+            <div class="profile-content">
+                <header>
+                    <h2 data-testid="test-user-name">EDOBOR EMMANUEL</h2>
+                    <p data-testid="test-user-bio">
+                        A Software developer who loves solving problems.
+                    </p>
+                </header>
+                
+                <div class="time-display" data-testid="test-user-time" id="current-time"></div>
+                
+                <nav>
+                    <ul data-testid="test-user-social-links" class="social-links">
+                        <li>
+                            <a href="https://twitter.com/emmaxyart" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">
+                                <i class="fab fa-x-twitter"></i> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/emmaxyart" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/emmanuel-edobor-4b8ba6339" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">
+                                <i class="fab fa-linkedin-in"></i> 
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <section class="lists-container">
+                    <div class="list-section">
+                        <h3>Hobbies</h3>
+                        <ul data-testid="test-user-hobbies">
+                            <li>Coding</li>
+                            <li>Reading</li>
+                            <li>Photography</li>
+                            <li>Drawing</li>
+                        </ul>
+                    </div>
+
+                    <div class="list-section">
+                        <h3>Dislikes</h3>
+                        <ul data-testid="test-user-dislikes">
+                            <li>Bad UI/UX</li>
+                            <li>Inconsistent Code</li>
+                            <li>Unclear Documentation</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
