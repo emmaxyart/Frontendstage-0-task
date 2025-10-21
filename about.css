@@ -1,0 +1,108 @@
+.about-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(207, 219, 233, 0.2);
+    border-radius: 12px;
+    color: #ffffff;
+}
+
+section {
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+h2 {
+    color: rgba(207, 219, 233, 0.9);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+p, ul {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+.nav-back {
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(12, 55, 105, 0.3);
+    border: 1px solid rgba(207, 219, 233, 0.2);
+    border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(12, 55, 105, 0.5);
+    transform: translateX(-5px);
+}
+
+.back-btn:focus {
+    outline: 2px solid rgba(207, 219, 233, 0.5);
+    outline-offset: 2px;
+}
+
+/* Font Awesome icon styles */
+.fa-arrow-left {
+    font-size: 0.9em;
+}

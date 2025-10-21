@@ -92,11 +92,6 @@ body {
 .avatar-container {
     position: relative;
     margin: 0;
-    /* Remove these lines that were creating the bigger circle */
-    /* background: var(--glass-background); */
-    /* padding: 0.5rem; */
-    /* border-radius: 50%; */
-    /* border: 1px solid var(--glass-border); */
 }
 
 .avatar-container img {
@@ -508,7 +503,6 @@ h2 {
     animation: glow 2s infinite;
 }
 
-/* Reduce motion if user prefers */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
@@ -554,4 +548,33 @@ h2 {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
     margin-right: 8px;
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.nav-btn {
+    padding: 0.6rem 1.2rem;
+    background: rgba(12, 55, 105, 0.3);
+    border: 1px solid rgba(207, 219, 233, 0.2);
+    border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(12, 55, 105, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:focus {
+    outline: 2px solid rgba(207, 219, 233, 0.5);
+    outline-offset: 2px;
 }

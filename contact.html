@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Edobor Emmanuel</title>
+    <link rel="icon" type="image/jpeg" href="my profile pic.jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <form class="contact-form" data-testid="test-contact-form">
+            <nav class="nav-back">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Profile
+                </a>
+            </nav>
+            <h1>Contact Us</h1>
+            
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" 
+                       id="name" 
+                       data-testid="test-contact-name" 
+                       aria-describedby="name-error" 
+                       required>
+                <div class="error-message" 
+                     id="name-error" 
+                     data-testid="test-contact-error-name"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" 
+                       id="email" 
+                       data-testid="test-contact-email" 
+                       aria-describedby="email-error" 
+                       required>
+                <div class="error-message" 
+                     id="email-error" 
+                     data-testid="test-contact-error-email"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" 
+                       id="subject" 
+                       data-testid="test-contact-subject" 
+                       aria-describedby="subject-error" 
+                       required>
+                <div class="error-message" 
+                     id="subject-error" 
+                     data-testid="test-contact-error-subject"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" 
+                         data-testid="test-contact-message" 
+                         aria-describedby="message-error" 
+                         required></textarea>
+                <div class="error-message" 
+                     id="message-error" 
+                     data-testid="test-contact-error-message"></div>
+            </div>
+
+            <button type="submit" 
+                    data-testid="test-contact-submit">Send Message</button>
+            
+            <div class="success-message" 
+                 data-testid="test-contact-success"></div>
+        </form>
+    </main>
+    <script src="contact.js"></script>
+</body>
+</html>
