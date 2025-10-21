@@ -1,4 +1,4 @@
-# Frontend-stage-0-task
+# Frontend-stage-0 & 1-task
 A modern, responsive, and accessible profile card built with HTML, CSS, and vanilla JavaScript. Features a glassmorphism design, real-time clock display, and social media integration.
 
  Features
@@ -42,6 +42,36 @@ Hobbies and dislikes
 Styling
 Modify the CSS variables in styles.css:
 
+Added New Pages
+Contact Page
+
+Form validation
+Real-time error checking
+Success message animations
+Glass effect design
+Back navigation button
+About Me Page
+
+Structured sections for bio, goals, and future notes
+Animated content sections
+Consistent glass effect
+Back navigation button
+
+Navigation Improvements
+Added navigation buttons to main profile card
+Implemented back buttons with icons
+Smooth transitions between pages
+
+Enhanced Responsiveness
+Optimized container widths for different devices
+Improved form layout on mobile/tablet/desktop
+Adjusted margins and padding for better spacing
+UI/UX Enhancements
+Success message positioning improved
+Added Font Awesome icons integration
+Enhanced glassmorphism effects
+Improved form validation feedback
+
 📱 Browser Support
 Chrome (latest)
 Firefox (latest)
@@ -64,6 +94,24 @@ test-user-avatar
 test-user-social-links
 test-user-hobbies
 test-user-dislikes
+
+Contact Form
+test-contact-name
+test-contact-email
+test-contact-subject
+test-contact-message
+test-contact-submit
+test-contact-success
+test-contact-error-<field>
+
+About Page
+test-about-page
+test-about-bio
+test-about-goals
+test-about-confidence
+test-about-future-note
+test-about-extra
+
 📄 License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
